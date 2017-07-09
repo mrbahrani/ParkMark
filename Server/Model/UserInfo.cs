@@ -16,6 +16,7 @@ namespace Model
         public string PhoneNumber { get; set; }
         public string Plate { get; set; }
         public int Credit { get; set; }
+        public int Authorisation { get; set; }
 
     }
 }

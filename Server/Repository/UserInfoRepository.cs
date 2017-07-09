@@ -9,7 +9,7 @@ namespace Repository
 {
     public class UserInfoRepository : IUserInfoRepository
     {
-        public string AddNewUser(string firstName, string familyName, string username, string password, string phoneNumber, string plate)
+        public string AddNewUser(string firstName, string familyName, string username, string password, string phoneNumber, string plate , int authorisation)
         {
             Context _Context = new Context();
             Model.UserInfo _UserInfoObj = new Model.UserInfo()
@@ -19,7 +19,8 @@ namespace Repository
                 Username = username,
                 Password = password,
                 PhoneNumber = phoneNumber,
-                Plate = plate
+                Plate = plate,
+                Authorisation = authorisation
             };
             _Context.UsersInfo.Add(_UserInfoObj);
             _Context.SaveChanges();
@@ -36,25 +37,16 @@ namespace Repository
             Context _Context = new Context();
             return (_Context.UsersInfo.Any(e => e.PhoneNumber == phoneNumber));
         }
-        public bool CheckAuthorisation(string username, string password)
+        public int CheckAuthorisation(string username)
+        {
+            Context _Context = new Context();
+            Model.UserInfo _UserInfo = _Context.UsersInfo.Where(e => e.Username == username).SingleOrDefault();
+            return _UserInfo.Authorisation;
+        }
+        public bool CheckAuthentication(string username, string password)
         {
             Context _Context = new Context();
             return _Context.UsersInfo.Any(e => e.Username == username && e.Password == password);
-        }
-        public bool CheckAuthentication(string username, string password, out int userID)
-        {
-            Context _Context = new Context();
-            Model.UserInfo _UserInfoObj = _Context.UsersInfo.Where(e => e.Username == username && e.Password == password).SingleOrDefault();
-            if (_UserInfoObj != null)
-            {
-                userID = _UserInfoObj.UserInfoID;
-                return true;
-            }
-            else
-            {
-                userID = -1;
-                return false;
-            }
         }
 
         public string ChangeUserInformation(int userID, string firstName, string familyName, string username, string phoneNumber, string plate)

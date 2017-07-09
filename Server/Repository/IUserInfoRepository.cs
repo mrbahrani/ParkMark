@@ -8,11 +8,11 @@ namespace Repository
 {
     public interface IUserInfoRepository
     {
-        string AddNewUser(string firstName, string familyName, string username, string password, string phoneNumber, string plate);
+        string AddNewUser(string firstName, string familyName, string username, string password, string phoneNumber, string plate, int authorisation);
         bool NotRepetitiveUsername(string username);
         bool NotRepetitivePhoneNumber(string phoneNumber);
-        bool CheckAuthorisation(string username, string password);
-        bool CheckAuthentication(string username, string password, out int userID);
+        int CheckAuthorisation(string username);
+        bool CheckAuthentication(string username, string password);
         string ChangeUserInformation(int userID, string firstName, string familyName, string username, string phoneNumber, string plate);
     }
 }
