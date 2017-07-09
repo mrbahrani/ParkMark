@@ -1,0 +1,10 @@
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\bin\Debug\Model.dll.config
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\bin\Debug\Model.dll
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\bin\Debug\Model.pdb
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityFramework.dll
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityFramework.xml
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.dll
+C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.pdb
