@@ -8,3 +8,13 @@ C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityF
 C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.dll
 C:\Users\Mohammad Ehsan\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.pdb
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\bin\Debug\Model.dll.config
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\bin\Debug\Model.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\bin\Debug\Model.pdb
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityFramework.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityFramework.xml
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.pdb

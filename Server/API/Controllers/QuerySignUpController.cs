@@ -10,24 +10,27 @@ namespace API.Controllers
     public class QuerySignUpController : QueryController
     {
         [HttpPost]
-        public bool AddNewUser(Models.UserInfo userInfo)
+        public string AddNewUser(Models.UserInfo userInfo)
         {
             _UserInfo = new Models.UserInfo();
-            Repository.UserInfoRepository _UserinfoRepository = new Repository.UserInfoRepository();
+            Repository.UserInfoRepository _UserInfoRepository = new Repository.UserInfoRepository();
             if (UserQueryValidate(userInfo))
             {
                 _UserInfo = userInfo;
-
-                if (_UserinfoRepository.NotRepetitiveUsername(_UserInfo.Username) && _UserinfoRepository.NotRepetitivePhoneNumber(_UserInfo.PhoneNumber)) ;
+                if (_UserInfoRepository.NotRepetitiveUsername(_UserInfo.Username) && _UserInfoRepository.NotRepetitivePhoneNumber(_UserInfo.PhoneNumber)) ;
                 {
-
-                    _UserinfoRepository.AddNewUser(_UserInfo.FirstName, _UserInfo.FamilyName, _UserInfo.Username, _UserInfo.Password, _UserInfo.PhoneNumber,_UserInfo.Plate, _UserInfo.Authorisation);
-
+                    return _UserInfoRepository.AddNewUser(_UserInfo.FirstName, _UserInfo.FamilyName, _UserInfo.Username,
+                        _UserInfo.Password, _UserInfo.PhoneNumber, _UserInfo.Plate, _UserInfo.Authorisation);
                 }
-
-
+                //else
+                //{
+                //    return "USERNAME IS REPETED1";
+                //}
             }
-            return true;
+            else
+            {
+                return "Info Is Null Or Recived Bad!";
+            }
         }
     }
 }

@@ -51,6 +51,11 @@
     <Compile Include="HashRepository.cs" />
     <Compile Include="IParkingPlaceRepository.cs" />
     <Compile Include="IUserInfoRepository.cs" />
+    <Compile Include="Migrations\201707101011254_repository.cs" />
+    <Compile Include="Migrations\201707101011254_repository.Designer.cs">
+      <DependentUpon>201707101011254_repository.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ParkingPlaceRepository.cs" />
     <Compile Include="UserInfoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +69,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707101011254_repository.resx">
+      <DependentUpon>201707101011254_repository.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

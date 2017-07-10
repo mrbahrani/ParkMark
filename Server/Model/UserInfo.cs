@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model
 {
     public class UserInfo
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserInfoID { get; set; }
         public string FirstName { get; set; }
         public string FamilyName { get; set; }

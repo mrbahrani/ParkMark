@@ -18,7 +18,7 @@ namespace Repository
         {
             Context _Context = new Context();
             Model.ParkingPlace _ParkingPlace = new Model.ParkingPlace();
-            _ParkingPlace = _Context.ParkingPlaces.Where(e => e.ParkingID == parkID).SingleOrDefault();
+            _ParkingPlace = _Context.ParkingPlaces.Where(e => e.ParkingPlaceID == parkID).SingleOrDefault();
             bool Check;
             if(_ParkingPlace.UserInfoRefID == -1)
             {
@@ -37,7 +37,7 @@ namespace Repository
             Model.UserInfo _UserInfo = new Model.UserInfo();
             try
             {
-                _ParkingPlace = _Context.ParkingPlaces.Where(e => e.ParkingID == parkID).SingleOrDefault();
+                _ParkingPlace = _Context.ParkingPlaces.Where(e => e.ParkingPlaceID == parkID).SingleOrDefault();
                 _UserInfo = _Context.UsersInfo.Where(e => e.UserInfoID == userID).SingleOrDefault();
                 _ParkingPlace.UserInfo = _UserInfo;
                 _Context.Entry(_ParkingPlace).State = System.Data.Entity.EntityState.Modified;
