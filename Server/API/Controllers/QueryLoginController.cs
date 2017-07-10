@@ -12,10 +12,24 @@ namespace API.Controllers
         [HttpPost]
         public bool IsUserValid(Models.UserInfo userInfo)
         {
+
+           
             _UserInfo = new Models.UserInfo();
+            Repository.UserInfoRepository _UserinfoRepository = new Repository.UserInfoRepository();
+
+
+
+
             if (UserQueryValidate(userInfo))
             {
                 _UserInfo = userInfo;
+                if (_UserinfoRepository.CheckAuthentication(userInfo.Username,userInfo.Password));
+                {
+
+
+
+                }
+
             }
             return true;
         }
