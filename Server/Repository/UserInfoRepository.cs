@@ -9,7 +9,7 @@ namespace Repository
 {
     public class UserInfoRepository : IUserInfoRepository
     {
-        public string AddNewUser(string firstName, string familyName, string username, string password, string phoneNumber, string plate , int authorisation)
+        public bool AddNewUser(string firstName, string familyName, string username, string password, string phoneNumber, string plate , int authorisation)
         {
             Context _Context = new Context();
             Model.UserInfo _UserInfoObj = new Model.UserInfo()
@@ -24,18 +24,18 @@ namespace Repository
             };
             _Context.UsersInfo.Add(_UserInfoObj);
             _Context.SaveChanges();
-            return "Added Successful!";
+            return true;
         }
 
         public bool NotRepetitiveUsername(string username)
         {
             Context _Context = new Context();
-            return _Context.UsersInfo.Any(e => e.Username == username);
+            return !(_Context.UsersInfo.Any(e => e.Username == username));
         }
         public bool NotRepetitivePhoneNumber(string phoneNumber)
         {
             Context _Context = new Context();
-            return (_Context.UsersInfo.Any(e => e.PhoneNumber == phoneNumber));
+            return !((_Context.UsersInfo.Any(e => e.PhoneNumber == phoneNumber)));
         }
         public int CheckAuthorisation(string username)
         {

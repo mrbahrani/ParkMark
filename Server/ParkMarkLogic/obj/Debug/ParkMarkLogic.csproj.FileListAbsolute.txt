@@ -1,0 +1,13 @@
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\obj\Debug\ParkMarkLogic.csprojResolveAssemblyReference.cache
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\ParkMarkLogic.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\ParkMarkLogic.pdb
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\Model.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\Repository.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\EntityFramework.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\Model.pdb
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\Model.dll.config
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\Repository.pdb
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\Repository.dll.config
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\bin\Debug\EntityFramework.xml
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\obj\Debug\ParkMarkLogic.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\ParkMarkLogic\obj\Debug\ParkMarkLogic.pdb

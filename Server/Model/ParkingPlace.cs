@@ -14,7 +14,7 @@ namespace Model
         public int ParkingPlaceID { get; set; }
         public int X_Position { get; set; }
         public int Y_Position { get; set; }
-        public int UserInfoRefID { get; set; }
+        public int? UserInfoRefID { get; set; }
         [ForeignKey("UserInfoRefID")]
         public virtual UserInfo UserInfo { get; set; }
     }

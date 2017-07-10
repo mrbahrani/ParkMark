@@ -13,19 +13,14 @@ namespace API.Controllers
         public string AddNewUser(Models.UserInfo userInfo)
         {
             _UserInfo = new Models.UserInfo();
-            Repository.UserInfoRepository _UserInfoRepository = new Repository.UserInfoRepository();
             if (UserQueryValidate(userInfo))
             {
                 _UserInfo = userInfo;
-                if (_UserInfoRepository.NotRepetitiveUsername(_UserInfo.Username) && _UserInfoRepository.NotRepetitivePhoneNumber(_UserInfo.PhoneNumber)) ;
-                {
-                    return _UserInfoRepository.AddNewUser(_UserInfo.FirstName, _UserInfo.FamilyName, _UserInfo.Username,
+                ParkMarkLogic.SignUpLogic _SignUpLogic = new ParkMarkLogic.SignUpLogic();
+                string result;
+                result = _SignUpLogic.AddNewUser(_UserInfo.FirstName, _UserInfo.FamilyName, _UserInfo.Username,
                         _UserInfo.Password, _UserInfo.PhoneNumber, _UserInfo.Plate, _UserInfo.Authorisation);
-                }
-                //else
-                //{
-                //    return "USERNAME IS REPETED1";
-                //}
+                return result;
             }
             else
             {

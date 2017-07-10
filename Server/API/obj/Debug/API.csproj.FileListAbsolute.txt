@@ -48,3 +48,5 @@ C:\Users\mmem\Documents\GitHub\ParkMark\Server\API\bin\Model.dll.config
 C:\Users\mmem\Documents\GitHub\ParkMark\Server\API\obj\Debug\API.csprojResolveAssemblyReference.cache
 C:\Users\mmem\Documents\GitHub\ParkMark\Server\API\obj\Debug\API.dll
 C:\Users\mmem\Documents\GitHub\ParkMark\Server\API\obj\Debug\API.pdb
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\API\bin\ParkMarkLogic.dll
+C:\Users\mmem\Documents\GitHub\ParkMark\Server\API\bin\ParkMarkLogic.pdb

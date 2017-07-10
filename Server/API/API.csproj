@@ -89,7 +89,6 @@
     <Compile Include="Controllers\QueryLoginController.cs" />
     <Compile Include="Controllers\QueryParkController.cs" />
     <Compile Include="Controllers\QuerySignUpController.cs" />
-    <Compile Include="Controllers\QueryUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -110,9 +109,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Repository\Repository.csproj">
-      <Project>{e6f1a480-ad39-4c99-8fe9-d091e3c5036c}</Project>
-      <Name>Repository</Name>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{4f908704-c3b2-4d86-99a4-190e137aad5e}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkMarkLogic\ParkMarkLogic.csproj">
+      <Project>{688ab428-678d-435d-b8fd-9252a94c3df1}</Project>
+      <Name>ParkMarkLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

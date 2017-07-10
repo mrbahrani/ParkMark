@@ -3,24 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data.Entity.SqlServer;
 namespace Repository
 {
     public class ParkingPlaceRepository : IParkingPlaceRepository
     {
-        public List<Model.ParkingPlace> GetPlace(int x, int y)
+        public List<Model.ParkingPlace> GetPlaces(int x, int y)
         {
             Context _Context = new Context();
-            List<Model.ParkingPlace> ParkingPlacesList = _Context.ParkingPlaces.Where(e => Math.Sqrt(Math.Pow((e.X_Position - x), 2) + Math.Pow((e.Y_Position - y), 2)) <= 500).ToList();
+            List<Model.ParkingPlace> ParkingPlacesList = _Context.ParkingPlaces.Where(e => sqlFunctions(Math.Pow((e.X_Position - x), 2) + Math.Pow((e.Y_Position - y), 2)) <= 500).ToList();
             return ParkingPlacesList;
         }
         public bool GetPlaceValidility(int parkID)
         {
             Context _Context = new Context();
             Model.ParkingPlace _ParkingPlace = new Model.ParkingPlace();
-            _ParkingPlace = _Context.ParkingPlaces.Where(e => e.ParkingPlaceID == parkID).SingleOrDefault();
+            try
+            {
+                _ParkingPlace = _Context.ParkingPlaces.Where(e => e.ParkingPlaceID == parkID).SingleOrDefault();
+            }
+            catch
+            {
+
+            }
             bool Check;
-            if(_ParkingPlace.UserInfoRefID == -1)
+            if(_ParkingPlace.UserInfoRefID == null)
             {
                 Check = true;
             }
@@ -30,7 +37,7 @@ namespace Repository
             }
             return Check;
         }
-        public Model.ParkingPlace SetPark(int parkID, int userID)
+        public bool SetPark(int parkID, int userID)
         {
             Context _Context = new Context();
             Model.ParkingPlace _ParkingPlace = new Model.ParkingPlace();
@@ -42,27 +49,12 @@ namespace Repository
                 _ParkingPlace.UserInfo = _UserInfo;
                 _Context.Entry(_ParkingPlace).State = System.Data.Entity.EntityState.Modified;
                 _Context.SaveChanges();
-                return _ParkingPlace;
+                return true;
             }
             catch
             {
-                _ParkingPlace = null;
-                return _ParkingPlace;
+                return false;
             }            
-        }
-        public Model.ParkingPlace ChangePlaceInformation(Model.ParkingPlace newInfo)
-        {
-            Context _Context = new Context();
-            try
-            {
-                _Context.Entry(newInfo).State = System.Data.Entity.EntityState.Modified;
-                _Context.SaveChanges();
-                return newInfo;
-            }
-            catch
-            {
-                return null;
-            }
         }
     }
 }

@@ -8,9 +8,8 @@ namespace Repository
 {
     public interface IParkingPlaceRepository
     {
-        List<Model.ParkingPlace> GetPlace(int x, int y);
+        List<Model.ParkingPlace> GetPlaces(int x, int y);
         bool GetPlaceValidility(int parkID);
-        Model.ParkingPlace SetPark(int parkID, int userId);
-        Model.ParkingPlace ChangePlaceInformation(Model.ParkingPlace newInfo);
+        bool SetPark(int parkID, int userId);
     }
 }

@@ -13,11 +13,12 @@ namespace API.Controllers
         public bool IsUserValid(Models.UserInfo userInfo)
         {          
             _UserInfo = new Models.UserInfo();
-            Repository.UserInfoRepository _UserinfoRepository = new Repository.UserInfoRepository();
+            ParkMarkLogic.Login _Login = new ParkMarkLogic.Login();
             if (UserQueryValidate(userInfo))
             {
                 _UserInfo = userInfo;
-                return _UserinfoRepository.CheckAuthentication(userInfo.Username,userInfo.Password);
+                bool result = _Login.UserLogin(_UserInfo.Username, _UserInfo.Password);
+                return result;
             }
             return false;
         }
