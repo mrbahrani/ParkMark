@@ -18,3 +18,13 @@ C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\bin\Debug\EntityFramework.S
 C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.dll
 C:\Users\mmem\Documents\GitHub\ParkMark\Server\Model\obj\Debug\Model.pdb
+H:\ParkMark\Model\bin\Debug\Model.dll.config
+H:\ParkMark\Model\bin\Debug\Model.dll
+H:\ParkMark\Model\bin\Debug\Model.pdb
+H:\ParkMark\Model\bin\Debug\EntityFramework.dll
+H:\ParkMark\Model\bin\Debug\EntityFramework.SqlServer.dll
+H:\ParkMark\Model\bin\Debug\EntityFramework.xml
+H:\ParkMark\Model\bin\Debug\EntityFramework.SqlServer.xml
+H:\ParkMark\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+H:\ParkMark\Model\obj\Debug\Model.dll
+H:\ParkMark\Model\obj\Debug\Model.pdb

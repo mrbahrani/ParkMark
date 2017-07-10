@@ -45,17 +45,14 @@ namespace API.Controllers
             }
         }
         [HttpPost]
-        public bool SetPark(Models.ParkingPlace parkingPlace, Models.UserInfo userInfo)
+        public bool SetPark(Models.Parking_User_idRequest parkingUser)
         {
             _ParkingPlace = new Models.ParkingPlace();
-            _UserInfo = new Models.UserInfo();
             _ParkingPlaceLogic = new ParkMarkLogic.ParkingPlaceLogic();
-            if (ParkingPlaceQueryValidate(parkingPlace) && UserQueryValidate(userInfo))
+            if (ParkingUserQueryValidate(parkingUser))
             {
-                _ParkingPlace = parkingPlace;
-                _UserInfo = userInfo;
                 bool result;
-                result = _ParkingPlaceLogic.SetPark(_ParkingPlace.ParkingID, _UserInfo.UserInfoID);
+                result = _ParkingPlaceLogic.SetPark(parkingUser.ParkingID, parkingUser.UserInfoID);
                 return result;
             }
             else

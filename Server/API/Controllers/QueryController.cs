@@ -33,5 +33,16 @@ namespace API.Controllers
                 return false;
             }
         }
+        public bool ParkingUserQueryValidate(Models.Parking_User_idRequest parkingPlace)
+        {
+            if (parkingPlace != null && ModelState.IsValid)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

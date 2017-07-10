@@ -11,7 +11,24 @@ namespace Repository
         public List<Model.ParkingPlace> GetPlaces(int x, int y)
         {
             Context _Context = new Context();
-            List<Model.ParkingPlace> ParkingPlacesList = _Context.ParkingPlaces.Where(e => sqlFunctions(Math.Pow((e.X_Position - x), 2) + Math.Pow((e.Y_Position - y), 2)) <= 500).ToList();
+            //List<Model.ParkingPlace> ParkingPlacesList = _Context.ParkingPlaces.Where(e => Math.Sqrt(Math.Pow((e.X_Position - x), 2) + Math.Pow((e.Y_Position - y), 2)) <= 500).ToList();
+            int max = _Context.ParkingPlaces.Max(e => e.ParkingPlaceID);
+            List<int> id = new List<int>();
+            List<int> xPos = new List<int>();
+            List<int> yPos = new List<int>();
+            List<Model.ParkingPlace> ParkingPlacesList = new List<Model.ParkingPlace>();
+            Model.ParkingPlace ParkingPlace;
+            id = _Context.ParkingPlaces.Select(e => e.ParkingPlaceID).ToList();
+            xPos = _Context.ParkingPlaces.Select(e => e.X_Position).ToList();
+            yPos = _Context.ParkingPlaces.Select(e => e.Y_Position).ToList();
+            for (int i = 0; i < xPos.Count; i++)
+            {
+                ParkingPlace = new Model.ParkingPlace();
+                ParkingPlace.ParkingPlaceID = id[i];
+                ParkingPlace.X_Position = xPos[i];
+                ParkingPlace.Y_Position = yPos[i];
+                ParkingPlacesList.Add(ParkingPlace);
+            }
             return ParkingPlacesList;
         }
         public bool GetPlaceValidility(int parkID)
@@ -27,7 +44,7 @@ namespace Repository
 
             }
             bool Check;
-            if(_ParkingPlace.UserInfoRefID == null)
+            if (_ParkingPlace.UserInfoRefID == null)
             {
                 Check = true;
             }
@@ -35,7 +52,7 @@ namespace Repository
             {
                 Check = false;
             }
-            return Check;
+            return Check;          
         }
         public bool SetPark(int parkID, int userID)
         {
@@ -51,8 +68,9 @@ namespace Repository
                 _Context.SaveChanges();
                 return true;
             }
-            catch
+            catch(Exception e)
             {
+                string a = e.Message;
                 return false;
             }            
         }
